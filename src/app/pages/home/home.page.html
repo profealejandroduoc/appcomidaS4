@@ -1,5 +1,6 @@
 <ion-header>
   <ion-toolbar color="primary">
+    <ion-icon slot="start" name="menu"  size="large" color="secondary" class="ion-padding-start"></ion-icon>
     <ion-title class="ion-text-center" color="secondary">
       Comidas App
     </ion-title>
@@ -10,9 +11,17 @@
   <ion-text color="primary" class="ion-text-center">
     <h1>Categorías</h1>
   </ion-text>
-  <ion-list>
-    <ion-item *ngFor="let item of lista" >
-      <ion-label>{{item}}</ion-label>
-    </ion-item>
-  </ion-list>
+
+  <ion-card *ngFor="let cat of lista" >
+    
+    <ion-card-header>
+      <ion-card-title color="tertiary" class="ion-text-left"><h2>{{cat.strCategory}}</h2></ion-card-title>
+      <ion-card-subtitle>ID: {{cat.idCategory}}</ion-card-subtitle>
+    </ion-card-header>
+    <img alt="imagen comida" src="{{cat.strCategoryThumb}}" (click)="verRecetas(cat.strCategory)"/>
+    <ion-card-content>
+      {{cat.strCategoryDescription}}
+    </ion-card-content>
+  </ion-card>
+
 </ion-content>
