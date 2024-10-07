@@ -1,5 +1,5 @@
 import { Component, OnInit } from '@angular/core';
-import { Router } from '@angular/router';
+import { Router, NavigationExtras } from '@angular/router';
 import { Receta } from 'src/app/interfaces/icomidas';
 import { ApidatosService } from 'src/app/services/apidatos.service';
 
@@ -32,6 +32,11 @@ export class RecetasPage implements OnInit {
   }
 
   onClick(id:string){
-    console.log(id);
+    let xtra:NavigationExtras={
+      state:{
+        id_inst:id
+      }
+    }
+    this.router.navigate(['instrucciones/'], xtra)
   }
 }

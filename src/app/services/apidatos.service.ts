@@ -1,6 +1,6 @@
 import { HttpClient } from '@angular/common/http';
 import { Injectable } from '@angular/core';
-import { Categorias, Recetas } from '../interfaces/icomidas';
+import { Categorias, Instrucciones, Recetas } from '../interfaces/icomidas';
 
 @Injectable({
   providedIn: 'root'
@@ -16,4 +16,9 @@ export class ApidatosService {
   getComidasxCatogoria(tipo:string){
     return this.httpclient.get<Recetas>(`https://www.themealdb.com/api/json/v1/1/filter.php?c=${tipo}`);
   }
+
+  getInstrucciones(id:string){
+    return this.httpclient.get<Instrucciones>(`https://www.themealdb.com/api/json/v1/1/lookup.php?i=${id}`);
+  }
+
 }

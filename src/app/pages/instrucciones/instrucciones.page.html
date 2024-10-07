@@ -1,19 +1,51 @@
-<ion-header [translucent]="true">
-  <ion-toolbar>
-    <ion-title>instrucciones</ion-title>
+<ion-header>
+  <ion-toolbar color="primary">
+    <ion-buttons slot="start">
+      <ion-back-button text="Atrás" defaultHref="/home" color="secondary"></ion-back-button>
+    </ion-buttons>
+    <ion-title color="secondary">
+      Instrucciones
+    </ion-title>
   </ion-toolbar>
 </ion-header>
 
 <ion-content class="ion-padding">
-  <ion-card>
-    <img alt="imagen" src="" />
+  <ion-fab slot="fixed" vertical="bottom" horizontal="end">
+    <ion-fab-button>
+      <ion-icon name="chevron-up-circle"></ion-icon>
+    </ion-fab-button>
+    <ion-fab-list side="top">
+      <ion-fab-button>
+        <ion-icon name="document"></ion-icon>
+      </ion-fab-button>
+      <ion-fab-button>
+        <ion-icon name="color-palette"></ion-icon>
+      </ion-fab-button>
+      <ion-fab-button>
+        <ion-icon name="globe"></ion-icon>
+      </ion-fab-button>
+    </ion-fab-list>
+  </ion-fab>
+  <ion-card *ngFor="let item of lista" >
+    <ion-card-subtitle class="ion-padding">ID:{{item.idMeal}}</ion-card-subtitle>
+    
+    
+    <img alt="imagen" src='{{item.strMealThumb}}'/>
     <ion-card-header>
-      <ion-card-title>Card Title</ion-card-title>
-      <ion-card-subtitle>Card Subtitle</ion-card-subtitle>
+      <ion-card-title>
+        
+        <ion-text color="tertiary" class="ion-text-capitalize">
+          <h1> {{item.strMeal}}</h1>
+        </ion-text>
+       
+      </ion-card-title>
+
     </ion-card-header>
   
     <ion-card-content>
-      Here's a small text description for the card content. Nothing more, nothing less.
+      <ion-text>
+        <p>{{item.strInstructions}}</p>
+      </ion-text>
     </ion-card-content>
   </ion-card>
 </ion-content>
