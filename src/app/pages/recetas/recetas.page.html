@@ -17,7 +17,7 @@
         <ion-card-title color="tertiary">Selecciona tu receta</ion-card-title>
       </ion-card-header>
       <ion-list>
-        <ion-item *ngFor="let item of listarecetas" detail="true">
+        <ion-item *ngFor="let item of listarecetas" detail="true" (click)="onClick(item.idMeal)">
           <ion-thumbnail slot="start">
             <img alt="Imagen" src="{{item.strMealThumb}}" />
           </ion-thumbnail>

@@ -30,4 +30,8 @@ export class RecetasPage implements OnInit {
       console.log(this.listarecetas);
     })
   }
+
+  onClick(id:string){
+    console.log(id);
+  }
 }

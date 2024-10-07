@@ -14,6 +14,10 @@ const routes: Routes = [
     path: 'recetas',
     loadChildren: () => import('./pages/recetas/recetas.module').then( m => m.RecetasPageModule)
   },
+  {
+    path: 'instrucciones',
+    loadChildren: () => import('./pages/instrucciones/instrucciones.module').then( m => m.InstruccionesPageModule)
+  },
 
 ];
 
