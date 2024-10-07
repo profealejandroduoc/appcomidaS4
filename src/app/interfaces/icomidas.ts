@@ -9,11 +9,11 @@ export interface Categoria {
   strCategoryDescription: string;
 }
 
-export interface RootObject {
-  meals: Meal[];
+export interface Recetas {
+  meals: Receta[];
 }
 
-export interface Meal {
+export interface Receta  {
   strMeal: string;
   strMealThumb: string;
   idMeal: string;
