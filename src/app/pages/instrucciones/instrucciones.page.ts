@@ -1,6 +1,6 @@
 import { Component, OnInit } from '@angular/core';
 import { Router } from '@angular/router';
-import { Instruccion } from 'src/app/interfaces/icomidas';
+import { Instruccion, Receta } from 'src/app/interfaces/icomidas';
 import { ApidatosService } from 'src/app/services/apidatos.service';
 
 @Component({
@@ -10,6 +10,8 @@ import { ApidatosService } from 'src/app/services/apidatos.service';
 })
 export class InstruccionesPage implements OnInit {
 
+  id_receta=""
+
   lista:Instruccion[]=[];
   constructor(private router:Router, private srv:ApidatosService) { }
 
@@ -18,8 +20,15 @@ export class InstruccionesPage implements OnInit {
     if(mis_extras!==undefined){
       this.srv.getInstrucciones(mis_extras["id_inst"]).subscribe(datos=>{
         this.lista.push(...datos.meals);
+        
       });
+      this.id_receta=mis_extras["id_inst"];
     }
+  }
+
+  favoritos(id_receta:string){
+    console.log(id_receta);
+    
   }
 
 }
