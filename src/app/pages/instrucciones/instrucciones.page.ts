@@ -29,14 +29,41 @@ export class InstruccionesPage implements OnInit {
         
       });
       this.id_receta=mis_extras["id_inst"];
+      
+      let ins=this.db.leer(this.id_receta);
+      ins.then(valor=>{
+        if(valor!==null){
+          this.corazon='heart'
+        }
+      });
+      
     }
   }
 
   agregarFavorito(id_receta:string){
-    console.log(id_receta);
-    this.db.guardar(id_receta,this.lista[0]);
-    this.corazon="heart"
+
+    let ins=this.db.leer(id_receta);
+    console.log("LEYENDO...");
+    console.log(ins);
+    console.log("FIN LECTURA...");
+
+    ins.then(valores=>{
+      if(valores===null){
+        this.db.guardar(id_receta,this.lista[0]);
+        this.corazon="heart"
+      }
+      else{
+        this.db.eliminar(id_receta);
+        this.corazon="heart-outline"
+      }
+    })
+
+    
+    
     
   }
+
+
+
 
 }
