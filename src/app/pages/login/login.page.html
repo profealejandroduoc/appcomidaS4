@@ -1,0 +1,40 @@
+<ion-header>
+  <ion-toolbar color="primary">
+    <ion-buttons slot="start">
+      
+    </ion-buttons>
+    <ion-title color="secondary">
+      Login
+    </ion-title>
+  </ion-toolbar>
+</ion-header>
+
+<ion-content class="ion-padding">
+  <ion-text color="secondary" class="ion-text-center">
+    <h1>Inicio de sesión</h1>
+  </ion-text>
+  <form #regForm="ngForm" (ngSubmit)="onSubmit()">
+    <ion-item>
+
+      <ion-input label="Usuario" labelPlacement="floating" required name="email" type="text"
+        placeholder="nombre de usuario"></ion-input>
+    </ion-item>
+    <ion-item>
+
+      <ion-input label="Password" labelPlacement="floating" required name="password" type="text"
+        placeholder="****"></ion-input>
+    </ion-item>
+
+    <ion-button expand="full" color="tertiary" type="submit" [disabled]="regForm.invalid" class="ion-padding-top">
+      <ion-text color="light" class="ion-no-padding">
+          Iniciar Sesión
+      </ion-text>
+    </ion-button>
+
+
+  </form>
+  <ion-text color="primary" class="ion-text-center" routerLink="/registro">
+    <p>Crear una cuenta</p>
+  </ion-text>
+ 
+</ion-content>
