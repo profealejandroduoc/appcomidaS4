@@ -3,6 +3,7 @@ import { Router } from '@angular/router';
 import { Instruccion, Receta } from 'src/app/interfaces/icomidas';
 import { ApidatosService } from 'src/app/services/apidatos.service';
 import { ServiciodbService } from 'src/app/services/serviciodb.service';
+import { Share, SharePlugin } from '@capacitor/share';
 
 @Component({
   selector: 'app-instrucciones',
@@ -18,7 +19,22 @@ export class InstruccionesPage implements OnInit {
   constructor(private router:Router, 
     private srv:ApidatosService,
     private db:ServiciodbService,
+ 
     ) { }
+
+  async compartir(){
+    console.log(this.lista[0].strYoutube);
+    await Share.share({
+      title: 'Mira esta receta!!!',
+      text: 'ComidAPP',
+      url: this.lista[0].strYoutube,
+      dialogTitle: 'Compartir receta',
+    });
+
+  }
+
+
+
 
   ngOnInit() {
     console.clear();
@@ -56,14 +72,7 @@ export class InstruccionesPage implements OnInit {
         this.db.eliminar(id_receta);
         this.corazon="heart-outline"
       }
-    })
-
-    
-    
-    
+    });
   }
-
-
-
 
 }
