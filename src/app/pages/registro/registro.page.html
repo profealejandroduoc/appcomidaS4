@@ -14,7 +14,7 @@
   <ion-text color="secondary" class="ion-text-center">
     <h1>Crear cuenta</h1>
   </ion-text>
-  <form #regForm="ngForm" (ngSubmit)="onSubmit()">
+  <form #regForm="ngForm" (ngSubmit)="registrar()">
     <ion-item>
 
       <ion-input label="Usuario" labelPlacement="floating" required name="email" type="text"
@@ -24,6 +24,18 @@
 
       <ion-input label="Password" labelPlacement="floating" required name="password" type="text"
         placeholder="****"></ion-input>
+    </ion-item>
+
+    <ion-item>
+
+      <ion-input label="Nombre" labelPlacement="floating" required name="nombre" type="text"
+        placeholder="ingrese su nombre"></ion-input>
+    </ion-item>
+
+    <ion-item>-
+
+      <ion-input label="Apellido" labelPlacement="floating" required name="apellido" type="text"
+        placeholder="ingrese su apellido"></ion-input>
     </ion-item>
 
     <ion-button expand="full" color="success" type="submit" [disabled]="regForm.invalid" class="ion-padding-top">
