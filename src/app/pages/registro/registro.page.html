@@ -17,24 +17,24 @@
   <form #regForm="ngForm" (ngSubmit)="registrar()">
     <ion-item>
 
-      <ion-input label="Usuario" labelPlacement="floating" required name="email" type="text"
+      <ion-input label="Usuario" labelPlacement="floating" required name="username" type="text" [(ngModel)]="usr.username" 
         placeholder="nombre de usuario"></ion-input>
     </ion-item>
     <ion-item>
 
-      <ion-input label="Password" labelPlacement="floating" required name="password" type="text"
+      <ion-input label="Password" labelPlacement="floating" required name="password" type="password" [(ngModel)]="usr.password" 
         placeholder="****"></ion-input>
     </ion-item>
 
     <ion-item>
 
-      <ion-input label="Nombre" labelPlacement="floating" required name="nombre" type="text"
+      <ion-input label="Nombre" labelPlacement="floating" required name="nombre" type="text" [(ngModel)]="usr.nombre" 
         placeholder="ingrese su nombre"></ion-input>
     </ion-item>
 
-    <ion-item>-
+    <ion-item>
 
-      <ion-input label="Apellido" labelPlacement="floating" required name="apellido" type="text"
+      <ion-input label="Apellido" labelPlacement="floating" required name="apellido" type="text" [(ngModel)]="usr.apellido" 
         placeholder="ingrese su apellido"></ion-input>
     </ion-item>
 

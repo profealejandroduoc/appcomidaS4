@@ -16,12 +16,12 @@
   <form #regForm="ngForm" (ngSubmit)="onSubmit()">
     <ion-item>
 
-      <ion-input label="Usuario" labelPlacement="floating" required name="email" type="text"
+      <ion-input label="Usuario" labelPlacement="floating" required name="email" type="text" [(ngModel)]="usr.username" 
         placeholder="nombre de usuario"></ion-input>
     </ion-item>
     <ion-item>
 
-      <ion-input label="Password" labelPlacement="floating" required name="password" type="text"
+      <ion-input label="Password" labelPlacement="floating" required name="password" type="text" [(ngModel)]="usr.password" 
         placeholder="****"></ion-input>
     </ion-item>
 
