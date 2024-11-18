@@ -24,3 +24,6 @@ Seleccionar el dispositivo de prueba
 
 Para realizar cambios sobre la misma aplicación
 `ionic cap copy android`
+
+
+....
