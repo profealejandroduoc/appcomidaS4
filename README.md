@@ -26,4 +26,4 @@ Para realizar cambios sobre la misma aplicación
 `ionic cap copy android`
 
 
-....
+
